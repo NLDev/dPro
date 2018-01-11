@@ -1,5 +1,11 @@
 "use strict";
 
+///////////////////////////
+//-----------------------//
+// Copyright (c) NullDev //
+//-----------------------//
+///////////////////////////
+
 const { app, BrowserWindow } = require("electron");
 const path                   = require("path");
 const { shell }              = require("electron");
@@ -27,7 +33,7 @@ function getLogoPath(){
     else                                return "/icon/icon.png";
 }
 
-function createWindowConfig(){
+/*function createWindowConfig(){
     let conf = { 
         resizable: true,
         minHeight: 600,
@@ -36,6 +42,20 @@ function createWindowConfig(){
         heigth:    600, 
         icon:      __dirname + getLogoPath(), 
         show:      false 
+    };
+    return conf;
+}*/
+
+function createWindowConfig(){
+    let conf = { 
+        resizable: debug ? true : false,
+        minHeight: 600,
+        minWidth:  300, 
+        width:     300, 
+        heigth:    600, 
+        icon:      __dirname + getLogoPath(), 
+        show:      false,
+        frame:     false
     };
     return conf;
 }
@@ -53,7 +73,7 @@ app.on("ready", () => {
 
     let win = new BrowserWindow(createWindowConfig());
     win.setMenu(null); 
-    win.loadURL(`file://${__dirname}/main.html`);
+    win.loadURL(`file://${__dirname}/splash/splash.html`);
     win.on("ready-to-show", () => { win.show(); });
     win.on("closed",        () => { app.quit(); });
     win.center();
