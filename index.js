@@ -40,7 +40,7 @@ function createWindowConfig(){
     return conf;
 }
 
-ipc.on("UI-windowID", function (event) { event.returnValue = win.id; });
+ipc.on("UI-windowID", function(event){ event.returnValue = win.id; });
 
 app.setName("dPro");
 
