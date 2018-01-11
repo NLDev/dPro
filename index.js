@@ -6,7 +6,11 @@ const { shell }              = require("electron");
 const os                     = require("os");
 const ipc                    = require("electron").ipcMain;
 
-const debug = true;
+let arg = process.argv.slice(2).map(v => v.toLowerCase());
+
+global.sharedObject = { prop: arg }
+
+const debug = (!!~arg.indexOf("--debug") || !!~arg.indexOf("-d")) ? true : false;
 
 if (debug){
     require("electron-context-menu")({
@@ -42,7 +46,6 @@ app.setName("dPro");
 
 app.on("ready", () => {
     console.log(
-        "                         \n" +
         "    ╔═╗╔╦╗╔═╗╦═╗╔╦╗╔═╗╔╦╗\n" +
         "    ╚═╗ ║ ╠═╣╠╦╝ ║ ║╣  ║║\n" +
         "    ╚═╝ ╩ ╩ ╩╩╚═ ╩ ╚═╝═╩╝\n"
