@@ -1,0 +1,20 @@
+{
+    "name": "dPro",
+    "description": "dPro Statistics",
+    "version": "0.1.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "dependencies": {
+        "electron": "*",
+        "jquery": "^3.2.1",
+        "app-module-path": "*"
+    },
+    "devDependencies": {
+        "electron-context-menu": "*"
+    },
+    "license": "Apache-2.0",
+    "author": "NullDev",
+    "homepage": "https://nulldev.org"
+}
