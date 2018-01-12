@@ -78,6 +78,7 @@ function initRender() {
         minWidth:  1000, 
         width:     1000, 
         heigth:    600,  
+        icon:      __dirname + getLogoPath(),
         show:      false,
         frame:     true
     });
