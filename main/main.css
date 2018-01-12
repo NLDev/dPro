@@ -1,0 +1,16 @@
+@import url("../lib/Raleway-Regular.ttf");
+
+/* * * * * * * * * * * * */
+/* Copyright (c) NullDev */
+/* * * * * * * * * * * * */
+
+* { 
+    cursor:                     none;
+    box-sizing:                 border-box;
+    font-family:                'Raleway', sans-serif;
+}
+
+body {
+    background-color:           #272A31;
+}
+
