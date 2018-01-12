@@ -71,13 +71,4 @@ window.onload = function() {
     window.myLine = new Chart(ctx, config);
 };
 
-document.getElementById('randomizeData').addEventListener('click', function() {
-    config.data.datasets.forEach(function(dataset) {
-        dataset.data = dataset.data.map(function() {
-            return randomScalingFactor();
-        });
-    });
-    window.myLine.update();
-});
-
 var colorNames = Object.keys(window.chartColors);
