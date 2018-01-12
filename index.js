@@ -73,7 +73,7 @@ function switchWins(){
 
 function initRender() {
     win = new BrowserWindow({ 
-        resizable: true,
+        resizable: debug ? true : false,
         minHeight: 600,
         minWidth:  1000, 
         width:     1000, 
@@ -90,13 +90,7 @@ function initRender() {
     win.loadURL(`file://${__dirname}/main/main.html`);
 }
 
-app.on("ready", () => {
-    console.log(
-        "\n    ╔═╗╔╦╗╔═╗╦═╗╔╦╗╔═╗╔╦╗\n" +
-        "    ╚═╗ ║ ╠═╣╠╦╝ ║ ║╣  ║║\n" +
-        "    ╚═╝ ╩ ╩ ╩╩╚═ ╩ ╚═╝═╩╝\n"
-    );
-});
+app.on("ready", () => { console.log("\n    ╔═╗╔╦╗╔═╗╦═╗╔╦╗╔═╗╔╦╗\n    ╚═╗ ║ ╠═╣╠╦╝ ║ ║╣  ║║\n    ╚═╝ ╩ ╩ ╩╩╚═ ╩ ╚═╝═╩╝\n"); });
 
 app.on("ready", initApp)
 
