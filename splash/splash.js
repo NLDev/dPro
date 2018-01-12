@@ -12,8 +12,9 @@ const remote = require("electron").remote;
 
 window.$ = window.jQuery = require("jquery");
 
-let arg = remote.getGlobal("sharedObject").prop;
-
+let skips = remote.getGlobal("sharedObject").skips;
+let lowrs = remote.getGlobal("sharedObject").lowres;
+ 
 function createWindowConfig(){
     let conf = { 
         resizable: remote.getGlobal("sharedObject").debug ? true : false,
@@ -39,7 +40,8 @@ let next = function(){
 
 window.onload = () => {
     $(document).ready(function() {
-        (!!~arg.indexOf("--skip-splash") || !!~arg.indexOf("-s")) ? next() : setTimeout(next, 5000);
+        if (lowrs) $("body").addClass("low-res");
+        skips ? next() : setTimeout(next, 5000);
         return;
     });
 }
