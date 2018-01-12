@@ -3,7 +3,9 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="main.css">
+        <script type="text/javascript" src="../lib/chart.min.js"></script>
         <script type="text/javascript" src="../lib/jquery.min.js"></script>
+        <script type="text/javascript" src="./render.js"></script>
     </head>
 
     <!-- #-#-#-#-#-#-#-#-#-#-#-#-# -->
@@ -11,9 +13,11 @@
     <!-- #-#-#-#-#-#-#-#-#-#-#-#-# -->
 
     <body>
-
-        <script type="text/javascript">
-            require("./main");
-        </script>
-    </body>
+    <div class="wrapper">
+        <canvas id="canvas"></canvas>
+    </div>
+    <script type="text/javascript">
+        require("./main.js");
+    </script>
+</body>
 </html>
