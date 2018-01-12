@@ -37,6 +37,12 @@ canvas { -webkit-user-select:   none; }
     width:                      1%;
 }
 
+.container:hover { cursor:      pointer; }
+
+.container:hover .bar1, 
+.container:hover .bar2, 
+.container:hover .bar3 { background-color: #FFF; }
+
 .title{ width:                  90%; }
 
 .title p { 
@@ -85,12 +91,13 @@ canvas { -webkit-user-select:   none; }
 .space { height:                3.5em; }
 
 .drawer {
-    position:                   fixed;
+    position:                   absolute;
     z-index:                    1;
-    background-color:           #4B515E;
+    background-color:           #272A31;
     color:                      #FFF;
     height:                     100%;
     transition:                 0.5s;
+    margin-top:                 -17px;
 }
 
 .open { width:                  40%; }
@@ -115,20 +122,22 @@ canvas { -webkit-user-select:   none; }
     padding-top:                1em;
     padding-bottom:             1em;
     padding-right:              1em;
+    padding-left:               1.4em;
 }
 
 .drawer ul li:hover{
     -webkit-transition-timing-function: ease;
     transition:                 0.5s;
-    background-color:           #333;
+    background-color:           #4B515E;
     -webkit-box-shadow:         inset 10px 10px 35px -17px rgba(26, 26, 26, 1);
 }
 
 .overlay {
-  position:                     absolute;
-  width:                        100%;
-  height:                       100%;
-  background-color:             #000;
+    position:                   absolute;
+    width:                      100%;
+    height:                     100%;
+    background-color:           #000;
+    margin-top:                 -17px;
 }
 
 .under {
@@ -140,5 +149,5 @@ canvas { -webkit-user-select:   none; }
 .over{
     -webkit-transition:         all 0.5s ease;
     z-index:                    1;
-    opacity:                    1;
+    opacity:                    .7;
 }
