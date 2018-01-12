@@ -20,6 +20,9 @@ const skips = (!!~arg.indexOf("--skip-splash") || !!~arg.indexOf("-s")) ? true :
 
 global.sharedObject = { debug: debug, lowres: lowrs, skips: skips }
 
+let win, loading;
+app.mainWindow = win;
+
 if (debug){
     require("electron-context-menu")({
         prepend: (params, browserWindow) => [{
@@ -35,8 +38,15 @@ function getLogoPath(){
     else                                return "/icon/icon.png";
 }
 
-function createWindowConfig(){
-    let conf = { 
+ipc.on("UI-windowID", function(event){ event.returnValue = win.id; });
+
+app.setName("dPro");
+
+function initApp(){ showLoading(initRender); }
+
+function showLoading(callback) {
+
+    loading = new BrowserWindow({ 
         resizable: debug ? true : false,
         minHeight: 600,
         minWidth:  300, 
@@ -45,13 +55,39 @@ function createWindowConfig(){
         icon:      __dirname + getLogoPath(), 
         show:      false,
         frame:     false
-    };
-    return conf;
+    });
+
+    loading.once("show", callback);
+    loading.loadURL(`file://${__dirname}/splash/splash.html`);
+    loading.show();
+    loading.center();
 }
 
-ipc.on("UI-windowID", function(event){ event.returnValue = win.id; });
+function switchWins(){
+    win.setMenu(null);
+    win.show();
+    win.center();
+    loading.hide();
+    loading.close();
+}
 
-app.setName("dPro");
+function initRender() {
+    win = new BrowserWindow({ 
+        resizable: true,
+        minHeight: 600,
+        minWidth:  1000, 
+        width:     1000, 
+        heigth:    600,  
+        show:      false,
+        frame:     true
+    });
+
+    win.webContents.once("dom-ready", () => { skips ? switchWins() : setTimeout(switchWins, 5000); });
+
+    win.on("closed", () => { win = null; })
+
+    win.loadURL(`file://${__dirname}/main/main.html`);
+}
 
 app.on("ready", () => {
     console.log(
@@ -59,11 +95,10 @@ app.on("ready", () => {
         "    ╚═╗ ║ ╠═╣╠╦╝ ║ ║╣  ║║\n" +
         "    ╚═╝ ╩ ╩ ╩╩╚═ ╩ ╚═╝═╩╝\n"
     );
-
-    let win = new BrowserWindow(createWindowConfig());
-    win.setMenu(null); 
-    win.loadURL(`file://${__dirname}/splash/splash.html`);
-    win.on("ready-to-show", () => { win.show(); });
-    win.on("closed",        () => { app.quit(); });
-    win.center();
 });
+
+app.on("ready", initApp)
+
+app.on("window-all-closed", () => { if (process.platform !== "darwin"){ app.quit(); } });
+
+app.on("activate", () => { if (win === null) initApp(); });
