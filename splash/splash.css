@@ -4,11 +4,7 @@
 /* Copyright (c) NullDev */
 /* * * * * * * * * * * * */
 
-* { 
-    overflow:                   hidden;
-    -webkit-user-select:        none;
-    cursor:                     none;
-}
+* { overflow:                   hidden; }
 
 body {
     width:                      100%;
@@ -33,12 +29,14 @@ p {
     margin-top:                 250px;
     font-size:                  22px;
     margin-left:                31%;
+    -webkit-user-select:        none;
 }
 
 img { 
     position:                   absolute;
     left:                       50%;
     -webkit-transform:          translateX(-50%);
+    -webkit-user-select:        none;
 }
 
 .wrap {
