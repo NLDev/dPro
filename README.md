@@ -23,7 +23,7 @@ $ `git clone https://github.com/NLDev/dPro.git && cd dPro` <br><br>
 $ `npm install` <br><br>
 5. Wait for it to finish. After installation is done, run the programm with <br>
 $ `npm start` <br><br>
-(6.) To enable debugging mode and skip the splash screen type <br>
+6. (Optional): To enable debugging mode and skip the splash screen type <br>
 $ `npm test` <br>
 
 <hr>
