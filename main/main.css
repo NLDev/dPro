@@ -5,7 +5,6 @@
 /* * * * * * * * * * * * */
 
 * { 
-    cursor:                     none;
     box-sizing:                 border-box;
     font-family:                'Raleway', sans-serif;
 }
@@ -14,3 +13,9 @@ body {
     background-color:           #272A31;
 }
 
+canvas { -webkit-user-select:   none; }
+
+.wrapper {
+    width:                      100%;
+    margin-top:                 20px;
+}
