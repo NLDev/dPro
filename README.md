@@ -36,6 +36,7 @@ The script takes sever CommandLine Arguments
 | -------- | ----- | -------- |
 | `--debug` | `-d` | Enables debugging features such as resizeable screen and "inspect elements". |
 | `--skip-splash` | `-s` | Skips the splash screen and jumpts to the main window instantly. |
+| `--low-res` | `-l` | Does not load some CSS definitions and animations. Can be used for very slow PC's |
 
 <hr>
 
