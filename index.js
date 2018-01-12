@@ -14,9 +14,11 @@ const ipc                    = require("electron").ipcMain;
 
 let arg = process.argv.slice(2).map(v => v.toLowerCase());
 
-const debug = (!!~arg.indexOf("--debug") || !!~arg.indexOf("-d")) ? true : false;
+const debug = (!!~arg.indexOf("--debug")       || !!~arg.indexOf("-d")) ? true : false;
+const lowrs = (!!~arg.indexOf("--low-res")     || !!~arg.indexOf("-l")) ? true : false;
+const skips = (!!~arg.indexOf("--skip-splash") || !!~arg.indexOf("-s")) ? true : false;
 
-global.sharedObject = { prop: arg, debug: debug }
+global.sharedObject = { debug: debug, lowres: lowrs, skips: skips }
 
 if (debug){
     require("electron-context-menu")({
@@ -53,7 +55,7 @@ app.setName("dPro");
 
 app.on("ready", () => {
     console.log(
-        "    ╔═╗╔╦╗╔═╗╦═╗╔╦╗╔═╗╔╦╗\n" +
+        "\n    ╔═╗╔╦╗╔═╗╦═╗╔╦╗╔═╗╔╦╗\n" +
         "    ╚═╗ ║ ╠═╣╠╦╝ ║ ║╣  ║║\n" +
         "    ╚═╝ ╩ ╩ ╩╩╚═ ╩ ╚═╝═╩╝\n"
     );
