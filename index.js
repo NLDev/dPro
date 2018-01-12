@@ -14,9 +14,9 @@ const ipc                    = require("electron").ipcMain;
 
 let arg = process.argv.slice(2).map(v => v.toLowerCase());
 
-global.sharedObject = { prop: arg }
-
 const debug = (!!~arg.indexOf("--debug") || !!~arg.indexOf("-d")) ? true : false;
+
+global.sharedObject = { prop: arg, debug: debug }
 
 if (debug){
     require("electron-context-menu")({
@@ -32,19 +32,6 @@ function getLogoPath(){
     else if (os.platform() === "win32") return "/icon/icon.ico";
     else                                return "/icon/icon.png";
 }
-
-/*function createWindowConfig(){
-    let conf = { 
-        resizable: true,
-        minHeight: 600,
-        minWidth:  1000, 
-        width:     1000, 
-        heigth:    600, 
-        icon:      __dirname + getLogoPath(), 
-        show:      false 
-    };
-    return conf;
-}*/
 
 function createWindowConfig(){
     let conf = { 
