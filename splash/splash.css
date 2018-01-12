@@ -16,6 +16,14 @@ body {
     background-color:           #272A31;
 }
 
+.low-res * { animation:         none !important; }
+
+.low-res .drop, .low-res .ripple { 
+    display:                    none !important;
+    -webkit-transform:          none !important;
+    transform:                  none !important;
+}
+
 .content { margin-top:          50px; }
 
 p {
