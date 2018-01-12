@@ -68,17 +68,16 @@ var config = {
 };
 
 function msg(msg){
-    classCheck();
-    $(".container").removeClass("change");
     $("#nlmsg-text").html(msg);
     $(".nlmsg").addClass("nlmsg-show");
     setTimeout(function(){ $(".nlmsg").removeClass("nlmsg-show"); }, 3000);
 }
 
 function modal(msg, headeroff, footeroff){
-    classCheck();
-    $(".container").removeClass("change");
-    if (headeroff) $(".nlmodal-header").css("display", "none");
+    if (headeroff){
+        $(".nlmodal-header").css("display", "none");
+        $(".close-hide").css("display", "block");
+    }
     if (footeroff) $(".nlmodal-footer").css("display", "none");
     $(".nlmodal").css("display", "block");
     $("#nlmodal-text").html(msg);
@@ -88,6 +87,7 @@ function forceModalClose(){
     $(".nlmodal").css("display", "none"); 
     $(".nlmodal-header").css("display", "block");
     $(".nlmodal-footer").css("display", "block");
+    $(".close-hide").css("display", "none");
 }
 
 function classCheck(){
@@ -121,6 +121,8 @@ $(document).ready(function(){
     });
 
     $("#code").on("click", function(){
+        classCheck();
+        $(".container").removeClass("change");
         shell.openExternal("https://github.com/NLDev/dPro");
         modal(
             "Opening link in browser..." +
@@ -130,9 +132,11 @@ $(document).ready(function(){
     });
 
     $("#about").on("click", function(){
+        classCheck();
+        $(".container").removeClass("change");
         modal(
             "some info lmao",
-            false,
+            true,
             true
         );
     });
@@ -147,6 +151,10 @@ $(document).ready(function(){
 
     $(".nlmodal-close").click(function(e) { forceModalClose(); });
     window.onclick = function(event) { if (event.target == document.getElementById("nlmodal")) forceModalClose(); }
+
+    $(".export-btn").on("click", function(){
+        msg("Exporting to Excel...");
+    });
 });
 
 window.onload = function() {
