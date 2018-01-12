@@ -35,10 +35,10 @@ The script takes sever CommandLine Arguments
 | Argument | Alias | Function |
 | -------- | ----- | -------- |
 | `--debug` | `-d` | Enables debugging features such as resizeable screen and "inspect elements". |
-| `--skip-splash` | -s | Skips the splash screen and jumpts to the main window instantly. |
+| `--skip-splash` | `-s` | Skips the splash screen and jumpts to the main window instantly. |
 
 <hr>
 
 ## :copyright: Copyright
 
-`Copyright (c) 2017 NullDev`
+`Copyright (c) 2018 NullDev`
