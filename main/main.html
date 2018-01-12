@@ -6,27 +6,6 @@
         <script type="text/javascript" src="../lib/chart.min.js"></script>
         <script type="text/javascript" src="../lib/jquery.min.js"></script>
         <script type="text/javascript" src="./render.js"></script>
-        <script type="text/javascript">
-            function toggle(x){
-                x.classList.toggle("change");
-                if($('#menu-drawer').hasClass('open')){
-                    $('#menu-drawer').removeClass('open');
-                    $('#menu-drawer').addClass('close');
-                }
-                else {
-                    $('#menu-drawer').removeClass('close');
-                    $('#menu-drawer').addClass('open')
-                }
-                if($('#overlay').hasClass('over')){
-                    $('#overlay').removeClass('over');
-                    $('#overlay').addClass('under');
-                }
-                else{
-                    $('#overlay').removeClass('under');
-                    $('#overlay').addClass('over')
-                }
-            }
-        </script>
     </head>
 
     <!-- #-#-#-#-#-#-#-#-#-#-#-#-# -->
@@ -34,9 +13,9 @@
     <!-- #-#-#-#-#-#-#-#-#-#-#-#-# -->
 
     <body>
-        <div id="overlay" class="overlay under" onclick="toggle(this)"></div>
+        <div id="overlay" class="overlay under"></div>
         <div id="menu-bar" class="bar">
-            <div class="container bar-item" onclick="toggle(this)">
+            <div class="container bar-item">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>

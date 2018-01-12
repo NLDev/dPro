@@ -19,8 +19,8 @@ var config = {
         labels: ["15", "15", "15", "15", "15", "15", "15"],
         datasets: [{
             label: "",
-            backgroundColor: window.chartColors.red,
-            borderColor: window.chartColors.red,
+            backgroundColor: "rgb(54, 162, 235)",
+            borderColor: "rgb(54, 162, 235)",
             data: [
                 randomScalingFactor(),
                 randomScalingFactor(),
@@ -66,9 +66,38 @@ var config = {
     }
 };
 
+$(document).ready(function(){
+	function classCheck(){
+        if ($("#menu-drawer").hasClass("open")){
+            $("#menu-drawer").removeClass("open");
+            $("#menu-drawer").addClass("close");
+        }
+        else {
+            $("#menu-drawer").removeClass("close");
+            $("#menu-drawer").addClass("open")
+        }
+        if ($("#overlay").hasClass("over")){
+            $("#overlay").removeClass("over");
+            $("#overlay").addClass("under");
+        }
+        else {
+            $("#overlay").removeClass("under");
+            $("#overlay").addClass("over")
+        }
+    }
+
+    $(".container").on("click", function(){
+        $(this).toggleClass("change");
+        classCheck();
+    });
+
+    $("#overlay").on("click", function(){
+        $(".container").toggleClass("change");
+        classCheck();
+    });
+});
+
 window.onload = function() {
     var ctx = document.getElementById("canvas").getContext("2d");
     window.myLine = new Chart(ctx, config);
 };
-
-var colorNames = Object.keys(window.chartColors);
