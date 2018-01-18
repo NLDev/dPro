@@ -89,8 +89,16 @@ function initRender() {
     win.loadURL(`file://${__dirname}/main/main.html`);
 }
 
-app.on("ready", () => { console.log("\n    ╔═╗╔╦╗╔═╗╦═╗╔╦╗╔═╗╔╦╗\n    ╚═╗ ║ ╠═╣╠╦╝ ║ ║╣  ║║\n    ╚═╝ ╩ ╩ ╩╩╚═ ╩ ╚═╝═╩╝\n"); });
-
+app.on("ready", () => { 
+    if (os.platform() === "win32"){
+        console.log(
+            "\n     ___ _____ _   ___ _____ ___ ___  \n    / __|_   _/_\\ | _ \\_   _| __|   \\ " + 
+            "\n    \__ \\ | |/ _ \\|   / | | | _|| |) |\n    |___/ |_/_/ \\_\\_|_\\ |_| |___|___/"
+        );
+    }
+    else console.log("\n    ╔═╗╔╦╗╔═╗╦═╗╔╦╗╔═╗╔╦╗\n    ╚═╗ ║ ╠═╣╠╦╝ ║ ║╣  ║║\n    ╚═╝ ╩ ╩ ╩╩╚═ ╩ ╚═╝═╩╝\n"); 
+});
+                                   
 app.on("ready", initApp)
 
 app.on("window-all-closed", () => { if (process.platform !== "darwin"){ app.quit(); } });
