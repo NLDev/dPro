@@ -1,16 +1,16 @@
 {
     "name": "dPro",
     "description": "dPro Statistics",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "main": "index.js",
     "scripts": {
         "start": "electron .",
-        "test": "electron . --debug --skip-splash" 
+        "test": "electron . --debug --skip-splash"
     },
     "dependencies": {
+        "app-module-path": "*",
         "electron": "*",
-        "jquery": "^3.2.1",
-        "app-module-path": "*"
+        "jquery": "^3.2.1"
     },
     "devDependencies": {
         "electron-context-menu": "*"
