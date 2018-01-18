@@ -29,7 +29,7 @@ var chart = AmCharts.makeChart("wrapper", {
         "bulletColor": "#FFFFFF",
         "hideBulletsCount": 50,
         "title": "red line",
-        "valueField": "visits",
+        "valueField": "menge",
         "useLineColorForBulletBorder": true,
         "balloon":{
             "drop":true
@@ -61,20 +61,21 @@ zoomChart();
 function zoomChart(){ chart.zoomToIndexes(chartData.length - 40, chartData.length - 1); }
 
 function generateChartData() {
-    var chartData = [];
-    var firstDate = new Date();
-    firstDate.setDate(firstDate.getDate() - 5);
-    var visits = 1200;
-    for (var i = 0; i < 1000; i++) {
-        var newDate = new Date(firstDate);
-        newDate.setDate(newDate.getDate() + i);
-        visits += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
-        chartData.push({
-            date: newDate,
-            visits: visits
-        });
-    }
-    return chartData;
+    return [
+        {"date":"2018-01-13T14:40:46.014Z","menge":1208},
+        {"date":"2018-01-14T14:40:46.014Z","menge":1214},
+        {"date":"2018-01-15T14:40:46.014Z","menge":1223},
+        {"date":"2018-01-16T14:40:46.014Z","menge":1229},
+        {"date":"2018-01-17T14:40:46.014Z","menge":1229},
+        {"date":"2018-01-18T14:40:46.014Z","menge":1230},
+        {"date":"2018-01-19T14:40:46.014Z","menge":1226},
+        {"date":"2018-01-20T14:40:46.014Z","menge":1230},
+        {"date":"2018-01-21T14:40:46.014Z","menge":1222},
+        {"date":"2018-01-22T14:40:46.014Z","menge":1219},
+        {"date":"2018-01-23T14:40:46.014Z","menge":1228},
+        {"date":"2018-01-24T14:40:46.014Z","menge":1226},
+        {"date":"2018-01-25T14:40:46.014Z","menge":1217}
+    ];
 }
 
 function exportXLSX(){ chart.export.toXLSX({}, function(data){ this.download(data, this.defaults.formats.XLSX.mimeType, "dPro.xlsx"); }); }
