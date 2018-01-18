@@ -13,60 +13,6 @@ const shell = require("electron").shell;
 
 window.$ = window.jQuery = require("jquery");
 
-var MONTHS = ["{{ZEIT}}"];
-var config = {
-    type: 'line',
-    data: {
-        labels: ["15", "15", "15", "15", "15", "15", "15"],
-        datasets: [{
-            label: "",
-            backgroundColor: "rgb(54, 162, 235)",
-            borderColor: "rgb(54, 162, 235)",
-            data: [
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor()
-            ],
-            fill: false,
-        }]
-    },
-    options: {
-            responsive: true,
-    title:{
-            display:true,
-            text: "{{TITLE}}"
-        },
-        tooltips: {
-            mode: "index",
-            intersect: false,
-        },
-        hover: {
-            mode: "nearest",
-            intersect: true
-        },
-        scales: {
-            xAxes: [{
-                display: true,
-                scaleLabel: {
-                    display: true,
-                    labelString: "{{ZEIT}}"
-                }
-            }],
-            yAxes: [{
-                display: true,
-                scaleLabel: {
-                    display: true,
-                    labelString: "{{MENGE}}"
-                }
-            }]
-        }
-    }
-};
-
 function msg(msg){
     $("#nlmsg-text").html(msg);
     $(".nlmsg").addClass("nlmsg-show");
@@ -154,10 +100,6 @@ $(document).ready(function(){
 
     $(".export-btn").on("click", function(){
         msg("Exporting to Excel...");
+        exportXLSX();
     });
 });
-
-window.onload = function() {
-    var ctx = document.getElementById("canvas").getContext("2d");
-    window.myLine = new Chart(ctx, config);
-};
