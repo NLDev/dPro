@@ -14,10 +14,12 @@ var chart = AmCharts.makeChart("wrapper", {
     "marginRight": 80,
     "autoMarginOffset": 20,
     "marginTop": 7,
+    "thousandsSeparator": "",
     "dataProvider": chartData,
     "valueAxes": [{
         "axisAlpha": 0.2,
         "dashLength": 1,
+        "title": "Menge",
         "position": "left"
     }],
     "mouseWheelZoomEnabled": true,
@@ -28,31 +30,27 @@ var chart = AmCharts.makeChart("wrapper", {
         "bulletBorderAlpha": 1,
         "bulletColor": "#FFFFFF",
         "hideBulletsCount": 50,
-        "title": "red line",
+        "title": "dPro Chart",
         "valueField": "menge",
         "useLineColorForBulletBorder": true,
-        "balloon":{
-            "drop":true
-        }
+        "balloon": { "drop": true }
     }],
     "chartScrollbar": {
         "autoGridCount": true,
         "graph": "g1",
         "scrollbarHeight": 40
     },
-    "chartCursor": {
-       "limitToGraph":"g1"
-    },
+    "chartCursor": { "limitToGraph":"g1" },
     "categoryField": "date",
     "categoryAxis": {
         "parseDates": true,
         "axisColor": "#DADADA",
         "dashLength": 1,
-        "minorGridEnabled": true
+        "minPeriod": "ss",
+        "minorGridEnabled": true,
+        "title": "Zeit"
     },
-    "export": {
-        "enabled": true
-    }
+    "export": { "enabled": true }
 });
 
 chart.addListener("rendered", zoomChart);
@@ -62,19 +60,19 @@ function zoomChart(){ chart.zoomToIndexes(chartData.length - 40, chartData.lengt
 
 function generateChartData() {
     return [
-        {"date":"2018-01-13T14:40:46.014Z","menge":1208},
-        {"date":"2018-01-14T14:40:46.014Z","menge":1214},
-        {"date":"2018-01-15T14:40:46.014Z","menge":1223},
-        {"date":"2018-01-16T14:40:46.014Z","menge":1229},
-        {"date":"2018-01-17T14:40:46.014Z","menge":1229},
-        {"date":"2018-01-18T14:40:46.014Z","menge":1230},
-        {"date":"2018-01-19T14:40:46.014Z","menge":1226},
-        {"date":"2018-01-20T14:40:46.014Z","menge":1230},
-        {"date":"2018-01-21T14:40:46.014Z","menge":1222},
-        {"date":"2018-01-22T14:40:46.014Z","menge":1219},
-        {"date":"2018-01-23T14:40:46.014Z","menge":1228},
-        {"date":"2018-01-24T14:40:46.014Z","menge":1226},
-        {"date":"2018-01-25T14:40:46.014Z","menge":1217}
+        {"date":"2018-01-20T14:00:00.000Z","menge":1208},
+        {"date":"2018-01-20T14:15:00.000Z","menge":1214},
+        {"date":"2018-01-20T14:30:00.000Z","menge":1223},
+        {"date":"2018-01-20T14:45:00.000Z","menge":1229},
+        {"date":"2018-01-20T15:00:00.000Z","menge":1229},
+        {"date":"2018-01-20T15:15:00.000Z","menge":1230},
+        {"date":"2018-01-20T15:30:00.000Z","menge":1226},
+        {"date":"2018-01-20T15:45:00.000Z","menge":1230},
+        {"date":"2018-01-20T16:00:00.000Z","menge":1222},
+        {"date":"2018-01-20T16:15:00.000Z","menge":1219},
+        {"date":"2018-01-20T16:30:00.000Z","menge":1228},
+        {"date":"2018-01-20T16:45:00.000Z","menge":1226},
+        {"date":"2018-01-20T17:00:00.000Z","menge":1217}
     ];
 }
 
