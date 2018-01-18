@@ -1,4 +1,5 @@
 "use strict";
+global.cptable = require("../lib/plugins/export/libs/xlsx/cpexcel.js");
 
 ///////////////////////////
 //-----------------------//
@@ -75,3 +76,5 @@ function generateChartData() {
     }
     return chartData;
 }
+
+function exportXLSX(){ chart.export.toXLSX({}, function(data){ this.download(data, this.defaults.formats.XLSX.mimeType, "dPro.xlsx"); }); }
