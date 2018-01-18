@@ -56,6 +56,7 @@ function classCheck(){
 }
 
 $(document).ready(function(){
+    let win = remote.getCurrentWindow();
     $(".container").on("click", function(){
         $(this).toggleClass("change");
         classCheck();
@@ -81,11 +82,17 @@ $(document).ready(function(){
         classCheck();
         $(".container").removeClass("change");
         modal(
-            "some info lmao",
+            "<center><h2>dPro</h2> Developed by NullDev (Chris)<br>" + 
+            "for a HTML Bulme project.</center><br><br>" +
+            "Copyright &copy; " + (new Date()).getFullYear() + " NullDev",
             true,
             true
         );
     });
+
+    $("#reload").on("click", function(){ win.reload(); });
+
+    $("#dev").on("click", function(){ remote.getCurrentWindow().toggleDevTools(); });
 
     $("#exit").on("click", function(){
         classCheck();
