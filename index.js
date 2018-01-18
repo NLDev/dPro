@@ -45,7 +45,6 @@ app.setName("dPro");
 function initApp(){ showLoading(initRender); }
 
 function showLoading(callback) {
-
     loading = new BrowserWindow({ 
         resizable: debug ? true : false,
         minHeight: 600,
@@ -56,7 +55,6 @@ function showLoading(callback) {
         show:      false,
         frame:     false
     });
-
     loading.once("show", callback);
     loading.loadURL(`file://${__dirname}/splash/splash.html`);
     loading.show();
@@ -73,8 +71,9 @@ function switchWins(){
 
 function initRender() {
     win = new BrowserWindow({ 
-        resizable: debug ? true : false,
+        resizable: true,
         minHeight: 600,
+        maxHeight: 600,
         minWidth:  1000, 
         width:     1000, 
         heigth:    600,  
