@@ -290,4 +290,5 @@ body {
     opacity:                    .7;
 }
 
-.amcharts-export-menu { display: none !important; }
+.amcharts-export-menu       { display: none !important; }
+.amcharts-zoom-out-bg:hover { cursor:  pointer;         }
