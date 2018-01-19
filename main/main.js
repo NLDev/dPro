@@ -13,6 +13,8 @@ const shell = require("electron").shell;
 
 window.$ = window.jQuery = require("jquery");
 
+let lowres = remote.getGlobal("sharedObject").lowres;
+
 function msg(msg){
     $("#nlmsg-text").html(msg);
     $(".nlmsg").addClass("nlmsg-show");
@@ -57,6 +59,9 @@ function classCheck(){
 
 $(document).ready(function(){
     let win = remote.getCurrentWindow();
+
+    if (lowres) $("body").addClass("low-res");
+
     $(".container").on("click", function(){
         $(this).toggleClass("change");
         classCheck();

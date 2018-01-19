@@ -16,6 +16,18 @@ body {
     padding:                    0;
 }
 
+.low-res {
+    background-color:           #000 !important;
+    color:                      #000 !important;
+}
+
+.low-res * { 
+    transition:                 none !important;
+    transform:                  none !important;
+    animation:                  none !important;
+    color:                      #000 !important;
+}
+
 #wrapper {
     width:                      100%;
     margin-top:                 80px;
@@ -285,7 +297,7 @@ body {
     z-index:                    -1;
 }
 
-.over{
+.over {
     -webkit-transition:         all 0.5s ease;
     z-index:                    1;
     opacity:                    .7;

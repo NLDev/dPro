@@ -82,7 +82,7 @@ function initRender() {
         frame:     true
     });
 
-    win.webContents.once("dom-ready", () => { skips ? switchWins() : setTimeout(switchWins, 4000); });
+    win.webContents.once("dom-ready", () => { (skips || lowrs) ? switchWins() : setTimeout(switchWins, 4000); });
 
     win.on("closed", () => { win = null; })
 
