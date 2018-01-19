@@ -82,8 +82,11 @@ $(document).ready(function(){
         classCheck();
         $(".container").removeClass("change");
         modal(
-            "<center><h2>dPro</h2> Developed by NullDev (Chris)<br>" + 
-            "for a HTML Bulme project.</center><br><br>" +
+            "<center>" + 
+                "<h2>dPro</h2> Developed by NullDev (Chris)<br>" + 
+                "for a HTML Bulme project." +
+            "</center>" + 
+            "<br><br>" +
             "Copyright &copy; " + (new Date()).getFullYear() + " NullDev",
             true,
             true
