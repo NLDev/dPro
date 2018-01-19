@@ -107,7 +107,7 @@ $(document).ready(function(){
         $(".container").removeClass("change");
         msg("Exiting...");
         let winObj = remote.getCurrentWindow();
-        setTimeout(function(){ winObj.close(); }, 1500);
+        lowres ? winObj.close() : setTimeout(function(){ winObj.close(); }, 1500);
     });
 
     $(".nlmodal-close").click(function(e) { forceModalClose(); });
