@@ -1,7 +1,7 @@
 # dPro
 
 <p align="center">
-<img height="150" width="auto" src="https://raw.githubusercontent.com/NLDev/dPro/master/icon/icon.png?token=AV312EcuKxkBdbFfXVxjmXfroJOLcl3Bks5aauZBwA%3D%3D" /><br>
+<img height="150" width="auto" src="https://raw.githubusercontent.com/NLDev/dPro/master/src/icon/icon-full.png?token=AV312Hdrdi2twe6SESK1pT6HbRLxgRBXks5aa8_UwA%3D%3D" /><br>
 :bar_chart: dPro Analytics and Statistics
 </p>
 
