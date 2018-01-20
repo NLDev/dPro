@@ -14,10 +14,7 @@
             "make_targets": {
                 "win32": ["squirrel"],
                 "darwin": ["zip"],
-                "linux": [
-                    "deb",
-                    "rpm"
-                ]
+                "linux": ["deb"]
             },
             "electronPackagerConfig": { "packageManager": "npm" },
             "electronWinstallerConfig": { "name": "dPro" },
