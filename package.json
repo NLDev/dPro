@@ -5,15 +5,47 @@
     "main": "index.js",
     "scripts": {
         "start": "electron .",
-        "test": "electron . --debug --skip-splash"
+        "test": "electron . --debug --skip-splash",
+        "package": "electron-forge package",
+        "make": "electron-forge make"
+    },
+    "config": {
+        "forge": {
+            "make_targets": {
+                "win32": ["squirrel"],
+                "darwin": ["zip"],
+                "linux": [
+                    "deb",
+                    "rpm"
+                ]
+            },
+            "electronPackagerConfig": { "packageManager": "npm" },
+            "electronWinstallerConfig": { "name": "dPro" },
+            "electronInstallerDebian": {},
+            "electronInstallerRedhat": {},
+            "github_repository": {
+                "owner": "NLDev",
+                "name": "dPro"
+            },
+            "windowsStoreConfig": {
+                "packageName": "",
+                "name": "dPro"
+            }
+        }
     },
     "dependencies": {
         "app-module-path": "*",
-        "electron": "*",
-        "jquery": "^3.2.1"
+        "jquery": "^3.2.1",
+        "electron-compile": "^6.4.2",
+        "electron-squirrel-startup": "^1.0.0"
     },
     "devDependencies": {
-        "electron-context-menu": "*"
+        "babel-plugin-transform-async-to-generator": "^6.24.1",
+        "babel-preset-env": "^1.6.1",
+        "babel-preset-react": "^6.24.1",
+        "electron-context-menu": "*",
+        "electron-forge": "^4.2.0",
+        "electron-prebuilt-compile": "1.8.2-beta.3"
     },
     "license": "Apache-2.0",
     "author": "NullDev",
