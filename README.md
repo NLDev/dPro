@@ -10,6 +10,19 @@
 This is/was a school project for the [HTL Bulme](http://bulme.at) where a water bottle with logging functionality was built. <br>
 The repository here includes the code for the software which reads out the data of the bottle. 
 
+## :camera: Screenhots 
+
+<p align="center">
+<br>
+<div style="display:flex;">
+<img height="275" width="auto" src="https://raw.githubusercontent.com/NLDev/dPro/master/demo/screen1.png" />
+<img height="275" width="auto" src="https://raw.githubusercontent.com/NLDev/dPro/master/demo/screen2.png" />
+</div>
+<br>
+</p>
+
+<hr>
+
 ## :bulb: Usage
 
 **No** deployment version yet and you need [electron](https://electronjs.org/) installed. <br>
