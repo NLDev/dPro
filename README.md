@@ -5,6 +5,11 @@
 :bar_chart: dPro Analytics and Statistics
 </p>
 
+## :information_source: About
+
+This is/was a school project for the [HTL Bulme](http://bulme.at) where a water bottle with logging functionality was built. <br>
+The repository here includes the code for the software which reads out the data of the bottle. 
+
 ## :bulb: Usage
 
 **No** deployment version yet and you need [electron](https://electronjs.org/) installed. <br>
@@ -36,7 +41,7 @@ The script takes sever CommandLine Arguments
 | -------- | ----- | -------- |
 | `--debug` | `-d` | Enables debugging features such as resizeable screen and "inspect elements". |
 | `--skip-splash` | `-s` | Skips the splash screen and jumpts to the main window instantly. |
-| `--low-res` | `-l` | Does not load some CSS definitions and animations. Can be used for very slow PC's |
+| `--low-res` | `-l` | Does not load some CSS definitions and animations. |
 
 <hr>
 
