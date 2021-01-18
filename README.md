@@ -1,7 +1,7 @@
 # dPro
 
 <p align="center">
-<img height="150" width="auto" src="https://raw.githubusercontent.com/NLDev/dPro/master/src/icon/icon-full.png?token=AV312Hdrdi2twe6SESK1pT6HbRLxgRBXks5aa8_UwA%3D%3D" /><br>
+<img height="150" width="auto" src="https://raw.githubusercontent.com/NullDev/dPro/master/src/icon/icon-full.png" /><br>
 :bar_chart: dPro Analytics and Statistics
 </p>
 
@@ -17,8 +17,8 @@ The repository here includes the code for the software which reads out the data 
 <p align="center">
 <br>
 <div style="display:flex;">
-<img height="275" width="auto" src="https://raw.githubusercontent.com/NLDev/dPro/master/demo/screen1.png" />
-<img height="275" width="auto" src="https://raw.githubusercontent.com/NLDev/dPro/master/demo/screen2.png" />
+<img height="275" width="auto" src="https://raw.githubusercontent.com/NullDev/dPro/master/demo/screen1.png" />
+<img height="275" width="auto" src="https://raw.githubusercontent.com/NullDev/dPro/master/demo/screen2.png" />
 </div>
 <br>
 </p>
@@ -37,8 +37,8 @@ If this returns a version number, NodeJS is installed. **If not**, get NodeJS [h
 $ `electron -v` <br>
 If this returns a version number, Electron is installed. **If not**, get it by typing <br>
 $ `sudo npm install -g electron` <br><br>
-3. Clone the repository and navigate to it. You can either download it [here](https://github.com/NLDev/dPro/archive/master.zip) or if you have Git installed, type <br>
-$ `git clone https://github.com/NLDev/dPro.git && cd dPro` <br><br>
+3. Clone the repository and navigate to it. You can either download it [here](https://github.com/NullDev/dPro/archive/master.zip) or if you have Git installed, type <br>
+$ `git clone https://github.com/NullDev/dPro.git && cd dPro` <br><br>
 4. Install all dependencies <br>
 $ `npm install` <br><br>
 5. Wait for it to finish. After installation is done, run the programm with <br>
@@ -62,4 +62,4 @@ The script takes sever CommandLine Arguments
 
 ## :copyright: Copyright
 
-`Copyright (c) 2018 NullDev`
+`Copyright (c) NullDev`
