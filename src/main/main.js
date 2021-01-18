@@ -75,7 +75,7 @@ $(document).ready(function(){
     $("#code").on("click", function(){
         classCheck();
         $(".container").removeClass("change");
-        shell.openExternal("https://github.com/NLDev/dPro");
+        shell.openExternal("https://github.com/NullDev/dPro");
         modal(
             "Opening link in browser..." +
             "<br><br>" +
