@@ -21,7 +21,7 @@
             "electronInstallerDebian": {},
             "electronInstallerRedhat": {},
             "github_repository": {
-                "owner": "NLDev",
+                "owner": "NullDev",
                 "name": "dPro"
             },
             "windowsStoreConfig": {
